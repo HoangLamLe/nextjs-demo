@@ -1,95 +1,158 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import styles from "./page.module.scss";
 
 export default function Home() {
+  const [list, setList] = useState(1);
+
+  const arrayItem = [
+    [
+      {
+        image: "https://tekup.vn/wp-content/uploads/2022/09/image-1.png",
+        text: "TOI 3D Customize E-commerce",
+      },
+      {
+        image: "https://tekup.vn/wp-content/uploads/2022/09/image.png",
+        text: "E-learning – Internal training platform",
+      },
+      {
+        image:
+          "https://tekup.vn/wp-content/uploads/2022/08/summer21-thumbnail.png",
+        text: "Summer 21 Cosmetic E-commerce Platform",
+      },
+      {
+        image: "https://tekup.vn/wp-content/uploads/2022/08/kiva-thumbnail.png",
+        text: "Kiva – Ambition to digital transformation in the brokerage assiduity",
+      },
+      {
+        image:
+          "https://tekup.vn/wp-content/uploads/2022/08/boxgo-thumbnail.png",
+        text: "Boxgo – Professional Warehouse Management",
+      },
+    ],
+    [
+      {
+        image: "https://tekup.vn/wp-content/uploads/2022/09/image.png",
+        text: "TOI 3D Customize E-commerce",
+      },
+      {
+        image: "https://tekup.vn/wp-content/uploads/2022/09/image.png",
+        text: "TOI 3D Customize E-commerce",
+      },
+      {
+        image: "https://tekup.vn/wp-content/uploads/2022/09/image.png",
+        text: "TOI 3D Customize E-commerce",
+      },
+      {
+        image: "https://tekup.vn/wp-content/uploads/2022/09/image.png",
+        text: "TOI 3D Customize E-commerce",
+      },
+      {
+        image: "https://tekup.vn/wp-content/uploads/2022/09/image.png",
+        text: "TOI 3D Customize E-commerce",
+      },
+      {
+        image: "https://tekup.vn/wp-content/uploads/2022/09/image.png",
+        text: "TOI 3D Customize E-commerce",
+      },
+    ],
+    [
+      {
+        image: "https://tekup.vn/wp-content/uploads/2022/09/image.png",
+        text: "TOI 3D Customize E-commerce",
+      },
+      {
+        image: "https://tekup.vn/wp-content/uploads/2022/09/image.png",
+        text: "TOI 3D Customize E-commerce",
+      },
+      {
+        image: "https://tekup.vn/wp-content/uploads/2022/09/image.png",
+        text: "TOI 3D Customize E-commerce",
+      },
+      {
+        image: "https://tekup.vn/wp-content/uploads/2022/09/image.png",
+        text: "TOI 3D Customize E-commerce",
+      },
+      {
+        image: "https://tekup.vn/wp-content/uploads/2022/09/image.png",
+        text: "TOI 3D Customize E-commerce",
+      },
+    ],
+    [
+      {
+        image: "https://tekup.vn/wp-content/uploads/2022/09/image.png",
+        text: "TOI 3D Customize E-commerce",
+      },
+      {
+        image: "https://tekup.vn/wp-content/uploads/2022/09/image.png",
+        text: "TOI 3D Customize E-commerce",
+      },
+      {
+        image: "https://tekup.vn/wp-content/uploads/2022/09/image.png",
+        text: "TOI 3D Customize E-commerce",
+      },
+      {
+        image: "https://tekup.vn/wp-content/uploads/2022/09/image.png",
+        text: "TOI 3D Customize E-commerce",
+      },
+    ],
+  ];
+
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <link
+        href="https://fonts.googleapis.com/css?family=Barlow"
+        rel="stylesheet"
+      ></link>
+      <section className={styles.sectionContainer}>
+        <div className={styles.navbar}>
+          <button
+            className={`${styles.navbarButton} ${
+              list === 1 ? styles.active : ""
+            }`}
+            onClick={() => setList(1)}
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+            All
+          </button>
+          <button
+            className={`${styles.navbarButton} ${
+              list === 2 ? styles.active : ""
+            }`}
+            onClick={() => setList(2)}
+          >
+            Manpower Supply
+          </button>
+          <button
+            className={`${styles.navbarButton} ${
+              list === 3 ? styles.active : ""
+            }`}
+            onClick={() => setList(3)}
+          >
+            Mobile App / Websites
+          </button>
+          <button
+            className={`${styles.navbarButton} ${
+              list === 4 ? styles.active : ""
+            }`}
+            onClick={() => setList(4)}
+          >
+            UI/UX Design
+          </button>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <div className={styles.listItem}>
+          {arrayItem[list - 1]?.map((item, index) => (
+            <div className={styles.item} key={index}>
+              <img className={styles.itemImg} src={item?.image} />
+              <div className={styles.itemText}>
+                <span>{item?.text}</span>
+                <span>{">"}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </main>
-  )
+  );
 }
